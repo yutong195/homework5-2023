@@ -1,0 +1,171 @@
+/* Import the Poppins font from Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/* Keyframes for logo animation */
+@keyframes logoAnimation {
+  from {
+    width: 25px;
+    opacity: 0;
+  }
+  to {
+    width: 475px;
+    opacity: 1;
+  }
+}
+
+#logo {
+    animation-name: logoAnimation;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+  }
+
+body {
+    font-family: 'Poppins',serif;
+    background-image: url('images/concrete_seamless.png');
+    background-color: #f1f1f1;
+}
+
+header{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav_links{
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+}
+
+/* not sure about this one!!!!!!!!! */
+.nav_items a{
+    color:blue;
+}
+
+.nav_items a:visited{
+    color:blue;
+}
+
+
+.card>header{
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    width: 100%;
+}
+
+/* 这块我觉得我是对的 */
+.card{
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    flex-basis: 450px;
+    flex-direction: row;
+    /* flex-direction: column; */
+}
+
+.pricing{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gallery img{
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+.gallery{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+@media screen and (min-width: 900px) {
+    header{
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        flex-direction: row;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .pricing{
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .card{
+        flex-direction: row;
+        flex-basis: 275px;
+    }
+
+    body>header{
+        position: sticky;
+        top: 0;
+
+    }
+    
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+    .logo {
+      /* Override animations and transitions for users who prefer reduced motion */
+      animation: none;
+    }
+  }
+
+  @media print and (orientation: portrait){
+    body{
+        font-family: Arial, Helvetica;
+        /* background-image: none; */
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .pricing{
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .card{
+        border: solid 2px #45ADDD;
+        flex-basis: 325px;
+    }
+
+    #gallery{
+        display: none;
+    }
+
+    .gallery{
+        display: none;
+    }
+
+    .card ul li:nth-child(2)::after {
+        content: "\1F44D"; 
+        
+    }
+  }
+
+
